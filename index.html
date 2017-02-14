@@ -6,19 +6,75 @@
     <style>
         @import url(https://fonts.googleapis.com/css?family=Montserrat:400);
 
-        html, body, #root {
-            width: 100%;
+        html, body {
             height: 100%;
         }
         body {
-            background-color: #f9f9f9;
-            display: table;
-            color: #333;
-            font-family: 'Montserrat', 'Helvetica Neue', Helvetica, arial, sans-serif;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            box-sizing: border-box;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+
+            font-family: 'Helvetica Neue', 'Helvetica', arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            background-color: rgba(244, 245, 249, 0.7);
         }
-        #root {
-            display: table-cell;
-            vertical-align: middle;
+        .SortableList {
+            position: relative;
+            z-index: 0;
+            background-color: #F3F3F3;
+            border: 1px solid #EFEFEF;
+            border-radius: 3px;
+            outline: none;
+
+            width: 400px;
+            height: 600px;
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+            border: 1px solid #E0E0E0;
+            list-style: none;
+            padding: 0;
+        }
+        .SortableItem {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            width: 100%;
+            height: 60px;
+            padding: 0 20px;
+            background-color: #FFF;
+            border-bottom: 1px solid #EFEFEF;
+            box-sizing: border-box;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            color: #333;
+            font-weight: 500;
+        }
+        .SortableHelper {
+            box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.2), 0 -5px 5px -5px rgba(0, 0, 0, 0.2);
+            background-color: rgba(255, 255, 255, 0.8);
+            cursor: row-resize;
         }
     </style>
 </head>
